@@ -15,14 +15,21 @@ public class Video extends ElementoMultimediale implements VideoAndRec, Luminosi
 	
 	//SET
 		
+	public void setTitolo() {
+		System.out.println("Inserisci il titolo dell'video");
+		this.titolo = Lettore_Multimediale.scanner.nextLine();	
+	}
+	
 	public void setDurata() {
-		System.out.println("Inserisci la durata dell'audio");
+		System.out.println("Inserisci la durata del video");
 		this.durata = Lettore_Multimediale.scanner.nextInt();
+		Lettore_Multimediale.scanner.nextLine();
 	}
 	
 	public void setVolume() {
-		System.out.println("Inserisci il volume dell'audio min: 1 max: 5 ");
+		System.out.println("Inserisci il volume del video min: 1 max: 5 ");
 		int v = Lettore_Multimediale.scanner.nextInt();
+		Lettore_Multimediale.scanner.nextLine();
 		switch(v) {
 		case 0 : 
 			this.volume = 0;
@@ -48,8 +55,9 @@ public class Video extends ElementoMultimediale implements VideoAndRec, Luminosi
 	}
 	
 	public void setLuminosità() {
-		System.out.println("Imposta la luminosità con un valore da 1 a 5");
+		System.out.println("Imposta la luminosità del video con un valore da 1 a 5");
 		int l = Lettore_Multimediale.scanner.nextInt();
+		Lettore_Multimediale.scanner.nextLine();
 		switch(l) {
 		case 0 :
 			this.luminosità = "0";
@@ -120,6 +128,19 @@ public class Video extends ElementoMultimediale implements VideoAndRec, Luminosi
 	@Override
 	public void play() {
 		
+		if(this.durata > 0) {
+			int j = 0;
+			while(j < this.durata) {
+				
+				String puntiEsclamativi = "";
+				for(int i=0; i < this.volume; i++) {
+					puntiEsclamativi += "!";
+				}
+				System.out.println("Titolo: " + this.titolo + " Volume: " + puntiEsclamativi + " Luminosità: " + luminosità);
+				j++;
+			}
+			
+		} else System.out.print("Breve ma intenso");
 		
 	}
 

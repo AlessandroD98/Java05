@@ -14,21 +14,22 @@ public class Audio extends ElementoMultimediale implements VideoAndRec {
 	}
 	
 	//SET
-	
-	/*
-	 * public void setTitolo() {
-	 * System.out.println("Inserisci il titolo dell'audio"); this.titolo =
-	 * Lettore_Multimediale.scanner.nextLine(); }
-	 */
+
+	public void setTitolo() {
+		System.out.println("Inserisci il titolo dell'audio");
+		this.titolo = Lettore_Multimediale.scanner.nextLine();	
+	}
 	
 	public void setDurata() {
 		System.out.println("Inserisci la durata dell'audio");
 		this.durata = Lettore_Multimediale.scanner.nextInt();
+		Lettore_Multimediale.scanner.nextLine();
 	}
 	
 	public void setVolume() {
 		System.out.println("Inserisci il volume dell'audio min: 1 max: 5 ");
 		int v = Lettore_Multimediale.scanner.nextInt();
+		Lettore_Multimediale.scanner.nextLine();
 		switch(v) {
 		case 0 : 
 			this.volume = 0;
@@ -80,15 +81,15 @@ public class Audio extends ElementoMultimediale implements VideoAndRec {
 				for(int i=0; i < this.volume; i++) {
 					puntiEsclamativi += "!";
 				}
-				System.out.println("Titolo: " + this.titolo + "Volume " + puntiEsclamativi);
+				System.out.println("Titolo: " + this.titolo + "Volume: " + puntiEsclamativi);
 				j++;
 			}
 			
 		} else System.out.print("Breve ma intenso");
 	
-	//REGOLA VOLUME	
-		
 	}
+	
+	//REGOLA VOLUME	
 
 	@Override
 	public void abbassaVolume() {

@@ -7,9 +7,6 @@ public abstract class ElementoMultimediale {
 	this.setTitolo();
 	}
 	
-	public void setTitolo() {
-		System.out.println("Inserisci il titolo dell'audio");
-		this.titolo = Lettore_Multimediale.scanner.nextLine();	
-		}
+	public void setTitolo() {}
 	
 }

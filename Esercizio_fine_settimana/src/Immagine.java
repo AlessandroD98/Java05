@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class Immagine implements Luminosità {
+public class Immagine extends ElementoMultimediale implements Luminosità {
 
 	private String luminosità = "Non impostata";
 	private String titolo;
 	
 	
 	public Immagine() {
-		this.setTitolo();
+		super();
 		this.setLuminosità();
 	}
 	
@@ -24,10 +24,11 @@ public class Immagine implements Luminosità {
 	
 	//SET
 	
-	public void setTitolo() {
-		System.out.println("Inserisci il titolo dell'immagine");
-		this.titolo = Lettore_Multimediale.scanner.nextLine() ;
-	}
+	/*
+	 * public void setTitolo() {
+	 * System.out.println("Inserisci il titolo dell'immagine"); this.titolo =
+	 * Lettore_Multimediale.scanner.nextLine() ; }
+	 */
 	
 	public void setLuminosità() {
 		System.out.println("Imposta la luminosità con un valore da 1 a 5");

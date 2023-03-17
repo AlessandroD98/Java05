@@ -1,5 +1,5 @@
 
-public class Audio implements VideoAndRec {
+public class Audio extends ElementoMultimediale implements VideoAndRec {
 
 	private String titolo;
 	private int volume = 0;
@@ -8,16 +8,18 @@ public class Audio implements VideoAndRec {
 	//COSTRUTTORE
 	
 	public Audio() {
-		this.setTitolo();
+		super();
 		this.setDurata();
 		this.setVolume();
 	}
 	
 	//SET
 	
-	public void setTitolo() {
-		System.out.println("Inserisci il titolo dell'audio");
-		this.titolo = Lettore_Multimediale.scanner.nextLine();	}
+	/*
+	 * public void setTitolo() {
+	 * System.out.println("Inserisci il titolo dell'audio"); this.titolo =
+	 * Lettore_Multimediale.scanner.nextLine(); }
+	 */
 	
 	public void setDurata() {
 		System.out.println("Inserisci la durata dell'audio");
@@ -69,7 +71,7 @@ public class Audio implements VideoAndRec {
 	//PLAY
 	
 	@Override
-	public void play() {
+	public  void play() {
 		if(this.durata > 0) {
 			int j = 0;
 			while(j < this.durata) {
